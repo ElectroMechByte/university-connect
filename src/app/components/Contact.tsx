@@ -74,8 +74,7 @@ export default function Contact() {
               Contact Us
             </h2>
             <p className="text-gray-600 mb-8">
-              We'd love to hear from you! Fill out the form and we will get back
-              as soon as possible.
+             {" We'd love to hear from you! Fill out the form and we’ll get back as soon as possible."}
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-5">
