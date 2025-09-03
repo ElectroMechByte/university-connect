@@ -1,12 +1,14 @@
 "use client";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section id="hero"
+    <section
+      id="hero"
       className="relative h-[95vh] flex items-center bg-cover 
                  bg-center md:bg-center bg-right"
       style={{
-        backgroundImage: "url('/bg_1.webp')", // place bg_1.jpg in /public
+        backgroundImage: "url('/bg_1.webp')", // place bg_1.webp in /public
       }}
     >
       {/* Overlay */}
@@ -26,18 +28,19 @@ export default function HeroSection() {
           </p>
 
           <div className="flex gap-4">
-            <a
+            {/* Internal links should use <Link /> */}
+            <Link
               href="/#contact"
               className="bg-teal-600 hover:bg-teal-700 px-6 py-3 rounded-lg text-white font-semibold shadow-md transition"
             >
               Get Started Now!
-            </a>
-            <a
+            </Link>
+            <Link
               href="/#courses"
               className="bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-gray-100 transition"
             >
               View Course →
-            </a>
+            </Link>
           </div>
         </div>
       </div>

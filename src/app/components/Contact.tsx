@@ -3,7 +3,7 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 import Image from "next/image";
 
-export default function ContactForm() {
+export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -24,10 +24,13 @@ export default function ContactForm() {
     setLoading(true);
 
     try {
-      await fetch("https://script.google.com/macros/s/AKfycbxP4veA05hEf8srYWM90srRnC6jltrqv8qaXD-c6KB3W3llX21n-2pSf8-KO4yXiJNj/exec", {
-        method: "POST",
-        body: JSON.stringify(formData),
-      });
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbxP4veA05hEf8srYWM90srRnC6jltrqv8qaXD-c6KB3W3llX21n-2pSf8-KO4yXiJNj/exec",
+        {
+          method: "POST",
+          body: JSON.stringify(formData),
+        }
+      );
 
       Swal.fire({
         title: "Message Sent!",
@@ -37,7 +40,7 @@ export default function ContactForm() {
       });
 
       setFormData({ name: "", email: "", phone: "", message: "" });
-    } catch (error) {
+    } catch {
       Swal.fire({
         title: "Oops!",
         text: "Something went wrong. Please try again.",
@@ -53,7 +56,7 @@ export default function ContactForm() {
     <section className="bg-white py-8" id="contact">
       <div className="mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Left: Full Height Image */}
+          {/* Left: Image */}
           <div className="flex justify-center">
             <Image
               src="/contact.png"
@@ -70,10 +73,7 @@ export default function ContactForm() {
               Contact Us
             </h2>
 
-            <form
-              onSubmit={handleSubmit}
-              className="bg-white px-8 space-y-6"
-            >
+            <form onSubmit={handleSubmit} className="bg-white px-8 space-y-6">
               <input
                 type="text"
                 name="name"

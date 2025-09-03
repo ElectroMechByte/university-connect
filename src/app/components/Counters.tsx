@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { FaUserGraduate, FaClock, FaUniversity, FaBookOpen, FaAward } from "react-icons/fa";
+import { FaUserGraduate, FaUniversity, FaBookOpen, FaAward } from "react-icons/fa";
 
 const counters = [
   {
